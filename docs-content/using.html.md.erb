@@ -5,7 +5,7 @@ owner: Partners
 
 This topic describes how Pivotal Cloud Foundry (PCF) developers can use First Data Payments for their apps.
 
-##<a id='using'></a> Using the First Data Payments Service
+##<a id='instance'></a> Create and Bind a Service Instance
 
 With the First Data Payments tile installed in Ops Manager, application developers assigned the Space Developer [role](../pivotalcf/concepts/roles.html#roles) can create instances of the service in their spaces and bind these instances to their apps. Here is how:
 
@@ -22,9 +22,15 @@ With the First Data Payments tile installed in Ops Manager, application develope
 
 1. Bind the service instance to an application using [Apps Manager](../pivotalcf/console/manage-apps.html#bind-services) or the [cf CLI](../devguide/services/managing-services.html#app-binding).
 
-An application bound to a First Data Payments service instance can retrieve login credentials from the `VCAP_SERVICES` environment variable. The Payeezy Client automatically logs the app into the service by parsing this variable and submitting these credentials.
+##<a id='code'></a> Call the Payeezy API
 
-Your application can obtain the Payeezy Client from [Maven](http://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring/1.0) with the following code:
+To make it easy for apps to consume the Payeezy API, First Data provides the Payeezy Client, in multiple versions for different languages. The Payeezy Client runs as a library within an app. 
+
+The Payeezy Client automatically logs the bound app into the Payeezy service using login credentials that it parses from the `VCAP_SERVICES` environment variable, which is set in the First Data Payments tile. An app can retrieve credentials explicitly from the `VCAP_SERVICES` variable. Developers can also view the credentials for an app in Apps Manager, under the **Services** tab, by clicking **Show credentials**:
+
+![Show credentials for app in Apps Manager](images/show-creds.png)
+
+Download the Payeezy Client from [Maven](http://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring/1.0) with the following code:
 
 ```
 <!-- https://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring -->
@@ -35,4 +41,5 @@ Your application can obtain the Payeezy Client from [Maven](http://mvnrepository
 </dependency>
 ```
 
-Developers can also browse application credentials in the Cloud Foundry UI.
+See [developer.payeezy.com](http://developer.payeezy.com) to learn how to use the Payeezy API and see code examples.
+
