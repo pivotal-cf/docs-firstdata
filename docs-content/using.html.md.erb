@@ -26,7 +26,7 @@ With the First Data Payments tile installed in Ops Manager, application develope
 
 To make it easy for apps to consume the Payeezy API, First Data provides the Payeezy Client, in multiple versions for different languages. The Payeezy Client runs as a library within an app. 
 
-The Payeezy Client automatically logs the bound app into the Payeezy service using login credentials that it parses from the `VCAP_SERVICES` environment variable, which is set in the First Data Payments tile. An app can retrieve credentials explicitly from the `VCAP_SERVICES` variable. Developers can also view the credentials for an app in Apps Manager, under the **Services** tab, by clicking **Show credentials**:
+The Payeezy Client automatically logs the bound app into the Payeezy service using login credentials that it parses from the `VCAP_SERVICES` environment variable, which is set in the First Data Payments tile. An app can use this `VCAP_SERVICES` variable to retrieve credentials explicitly. Developers can also view the credentials for an app in Apps Manager, under the **Services** tab, by clicking **Show credentials**:
 
 ![Show credentials for app in Apps Manager](images/show-creds.png)
 
