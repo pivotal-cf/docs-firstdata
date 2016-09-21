@@ -1,12 +1,38 @@
 ---
-title: Using YOUR-PRODUCT-NAME
+title: Using First Data Payments for PCF
 owner: Partners
 ---
 
-This topic describes how to use YOUR-PRODUCT-NAME.
+This topic describes how Pivotal Cloud Foundry (PCF) developers can use First Data Payments for their apps.
 
-##<a id='using'></a> Using YOUR-PRODUCT-NAME
+##<a id='using'></a> Using the First Data Payments Service
 
-**This topic should include any instructions for how to use the service or dashboard created by the tile. Give procedures for how to perform the different functions offered by your product, and provide screenshots where necessary.** 
+With the First Data Payments tile installed in Ops Manager, application developers assigned the Space Developer [role](../pivotalcf/concepts/roles.html#roles) can create instances of the service in their spaces and bind these instances to their apps. Here is how:
 
-**You can also use this section to include information about Architecture and Troubleshooting for known errors. If you include a Troubleshooting section, follow the Symptom/Explanation format used in the [Okta Troubleshooting](http://docs.pivotal.io/p-identity/okta/troubleshooting.html) topic**.
+1. From the Apps Manager console, click **Marketplace**.
+
+1. Find and click the **First Data Payments** service listing.
+
+1. Select one of the available service plans:
+    - Default (Anonymous) Plan
+    - Existing Developer Plan
+    - New Developer Plan
+
+1. Specify a name for the service instance you are creating, and enter the additional required parameters, as determined by the service plan type. The New Developer Plan prompts for your name and email to create a new Payeezy account.
+
+1. Bind the service instance to an application using [Apps Manager](../pivotalcf/console/manage-apps.html#bind-services) or the [cf CLI](../devguide/services/managing-services.html#app-binding).
+
+An application bound to a First Data Payments service instance can retrieve login credentials from the `VCAP_SERVICES` environment variable. The Payeezy Client automatically logs the app into the service by parsing this variable and submitting these credentials.
+
+Your application can obtain the Payeezy Client from [Maven](http://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring/1.0) with the following code:
+
+```
+<!-- https://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring -->
+<dependency>
+    <groupId>com.firstdata.payeezy</groupId>
+    <artifactId>payeezy-client-spring</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
+Developers can also browse application credentials in the Cloud Foundry UI.
