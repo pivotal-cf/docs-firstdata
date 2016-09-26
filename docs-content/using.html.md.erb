@@ -18,19 +18,19 @@ With the First Data Payments tile installed in Ops Manager, application develope
     - Existing Developer Plan
     - New Developer Plan
 
-1. Specify a name for the service instance you are creating, and enter the additional required parameters, as determined by the service plan type. The New Developer Plan prompts for your name and email to create a new Payeezy account.
+1. Specify a name for the service instance you are creating, and enter the additional required parameters, as determined by the service plan type. The New Developer Plan prompts for your name and email to create a new First Data Developer account.
 
 1. Bind the service instance to an application using [Apps Manager](../pivotalcf/console/manage-apps.html#bind-services) or the [cf CLI](../devguide/services/managing-services.html#app-binding).
 
-##<a id='code'></a> Call the Payeezy API
+##<a id='code'></a> Call the First Data API
 
-To make it easy for apps to consume the Payeezy API, First Data provides the Payeezy Client, in multiple versions for different languages. The Payeezy Client runs as a library within an app. 
+To make it easy for apps to consume the First Data API, First Data provides the First Data Client, in multiple versions for different languages. The First Data Client runs as a library within an app. 
 
-The Payeezy Client automatically logs the bound app into the Payeezy service using login credentials that it parses from the `VCAP_SERVICES` environment variable, which is set in the First Data Payments tile. An app can use this `VCAP_SERVICES` variable to retrieve credentials explicitly. Developers can also view the credentials for an app in Apps Manager, under the **Services** tab, by clicking **Show credentials**:
+The First Data Client automatically logs the bound app into the First Data service using login credentials that it parses from the `VCAP_SERVICES` environment variable, which is set in the First Data Payments tile. An app can use this `VCAP_SERVICES` variable to retrieve credentials explicitly. Developers can also view the credentials for an app in Apps Manager, under the **Services** tab, by clicking **Show credentials**:
 
 ![Show credentials for app in Apps Manager](images/show-creds.png)
 
-Download the Payeezy Client from [Maven](http://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring/1.0) with the following code:
+Download the First Data Client from [Maven](http://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring/1.0) with the following code:
 
 ```
 <!-- https://mvnrepository.com/artifact/com.firstdata.payeezy/payeezy-client-spring -->
@@ -41,5 +41,5 @@ Download the Payeezy Client from [Maven](http://mvnrepository.com/artifact/com.f
 </dependency>
 ```
 
-See [developer.payeezy.com](http://developer.payeezy.com) to learn how to use the Payeezy API and see code examples.
+See [developer.payeezy.com](http://developer.payeezy.com) to learn how to use the First Data API and see code examples.
 
